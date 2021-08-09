@@ -1,16 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Main from './components/MainComponent.js';
 import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {ConfigureStore} from './redux/configureStore';
+
+const store = ConfigureStore();
 
 function App() {
   return (
-    <React.Fragment>
+    <Provider store={store}>
         <BrowserRouter>
           <Main />
         </BrowserRouter>
-    </React.Fragment>
+    </Provider>
   );
 }
 

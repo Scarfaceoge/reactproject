@@ -18,6 +18,10 @@
   text-decoration: none;
 }
 
+h4 {
+  font-family: 'Lobster' , cursive;
+}
+
 footer {
   background-color: #E0DEDE
 }
@@ -28,6 +32,7 @@ footer {
 
 footer ul{
   list-style-type: none;
+  padding-top:10px;
 }
 
 footer ul li {
@@ -43,4 +48,19 @@ footer ul li:last-child{
 
 .text-link{
   text-decoration: none !important; 
+}
+
+#members{
+  list-style-type: none;
+}
+
+.member {
+  display: inline-block;
+  border-right: 2px solid #C4C4C4;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.member:last-child {
+  border-right: none;
 }

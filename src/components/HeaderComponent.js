@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
-import { Jumbotron , Navbar , Nav , NavbarToggler , Collapse , NavItem } from 'reactstrap';
-import {NavLink} from 'react-router-dom';
-import { LOGOS } from '../shared/logos';
+import { Jumbotron , Navbar , Nav , NavbarBrand , NavbarToggler , Collapse , NavItem } from 'reactstrap';
+import {NavLink , Link} from 'react-router-dom';
+import { IMAGES } from '../shared/images';
+
 
 class Header extends Component {
-   constructor(props){
-       super(props);
-       this.state = {
-           logos : LOGOS,
-           isNavOpen: false
-       }
+    constructor(props){
+        super(props);
+        this.state = {
+            images: IMAGES,
+            isNavOpen: false,
+            isModalOpen:false
+        }
+        this.toggleNav=this.toggleNav.bind(this);
    }
 
    toggleNav(){
@@ -27,7 +30,7 @@ class Header extends Component {
                     <div className="container">
                         <div className="row">
                             <div className='col-sm-2'>
-                                <img src={this.state.logos.src} alt={this.state.logos.title}/>
+                                <img src={this.state.images[0].src} alt={this.state.images[0].title}/>
                             </div>
                             <div className="col-sm-8">
                                 <h1>Dividend Pharmacy</h1>
@@ -43,6 +46,7 @@ class Header extends Component {
 
                 <Navbar light sticky='top' expand='md'>
                     <div className='container'>
+                        <NavbarBrand className='mr-auto' href='/'><img src={this.state.images[1].src} alt={this.state.images[1].description} height='25' width='25' /></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav}/>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
@@ -60,6 +64,10 @@ class Header extends Component {
                                 </NavItem>
                             </Nav>
                         </Collapse>
+                        <ul className='mr-auto' id='members'>
+                            <li className='member'><Link className='text-link' href=''>Sign up</Link></li>
+                            <li className='member'><Link className='text-link'>Login</Link></li>
+                        </ul>
                     </div>
                 </Navbar>
             </React.Fragment>
