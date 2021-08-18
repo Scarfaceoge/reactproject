@@ -64,3 +64,11 @@ footer ul li:last-child{
 .member:last-child {
   border-right: none;
 }
+
+.card .card-header {
+  background-color: #6DCF87;
+}
+
+.uploadPrescription {
+  background-color: rgba(109, 207, 135, 0.5);
+}

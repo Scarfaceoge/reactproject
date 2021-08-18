@@ -1,18 +1,39 @@
 import React from 'react';
-import { Card , CardImg} from 'reactstrap';
+import { Card , CardImg , CardBody , CardTitle , Breadcrumb , BreadcrumbItem }  from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-export function HomeInfo(props) {
+
+export function HomeInfo({homeImage}) {
+    console.log(homeImage.src)
     return(
-        <div className='row'>
-            <div className='col-md-5'>
-                <Card>
-                    <CardImg src={props.homeImage.src} alt={props.homeImage.title} width='100%'/>
-                </Card>
+        <>
+            <div className='row'>
+                <div className='col'>
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to='/home' className='text-link'>Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem>{homeImage.title}</BreadcrumbItem>
+                    </Breadcrumb>
+                </div>
             </div>
-            <div className='col-md-5'>
-
+            <div className='row m-3'>
+                <div className='col-md-5'>
+                    <Card>
+                        <CardImg
+                            top
+                            src={homeImage.src}
+                            width='100%'
+                            alt={homeImage.title}
+                        />
+                        <CardBody>
+                            <CardTitle><h4>{homeImage.title}</h4></CardTitle>
+                        </CardBody>
+                    </Card>
+                </div>
+                <div className='col-md-5 offset-1'>
+                    <h4>{homeImage.description}</h4>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

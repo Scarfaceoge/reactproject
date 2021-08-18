@@ -17,7 +17,7 @@ function Footer(){
                 <a className='btn btn-social-icon btn-twitter' href='https://www.twitter.com' target='_blank'><i className='fa fa-twitter'></i></a>{' '}
                 <a className='btn btn-social-icon btn-google' href='https://www.youtube.com' target='_blank'><i className='fa fa-youtube'></i></a>
             </div>
-            <p style={{paddingBottom: 20}}>Designed by ogemdi in partial fulfilment of the requirements of the bootstrap course <br />
+            <p style={{paddingBottom: 20}}>Designed by ogemdi in partial fulfilment of the requirements of the react course <br />
             <i className='fa fa-copyright'></i>dividendpharma2021</p>
             
         </footer>

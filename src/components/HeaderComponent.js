@@ -65,7 +65,7 @@ class Header extends Component {
                             </Nav>
                         </Collapse>
                         <ul className='mr-auto' id='members'>
-                            <li className='member'><Link className='text-link' href=''>Sign up</Link></li>
+                            <li className='member'><Link className='text-link' to='/signup'>Sign up</Link></li>
                             <li className='member'><Link className='text-link'>Login</Link></li>
                         </ul>
                     </div>
