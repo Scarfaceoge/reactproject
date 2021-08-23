@@ -7,19 +7,19 @@ import { Control, LocalForm , Errors} from 'react-redux-form';
 
 export function RenderHomeItem({homeImage}){
     return (
-            <Card>
-                <Link to={`/home/${homeImage.id}`} className='text-link'>
-                    <CardImg src={homeImage.src} width='100%' alt={homeImage.title} />
-                    <CardTitle><h4>{homeImage.title}</h4></CardTitle>
-                </Link>
-            </Card>
+        <Card style={{border: 'hidden'}}>
+            <Link to={`/home/${homeImage.id}`} className='text-link'>
+                <CardImg src={homeImage.src} width='100%' alt={homeImage.title} />
+                <CardTitle className='d-flex justify-content-center'><h4>{homeImage.title}</h4></CardTitle>
+            </Link>
+        </Card>
     )
 }
 
 const required = val => val && val.length;
 const isNumber = val => !isNaN(+val);
 
-class Prescription extends Component{
+export class Prescription extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -28,15 +28,26 @@ class Prescription extends Component{
             phoneNum:'',
             title:'',
             upload:'',
-            isModalOpen: false
+            isModalOpen: false,
+            touched: {
+                firstName: false,
+                lastName: false,
+                phoneNum: false,
+                title: false
+            }
         }
-        this.toggleModal= this.toggleModal.bind(this)
+        this.toggleModal= this.toggleModal.bind(this);
     }
 
     toggleModal(){
         this.setState({
             isModalOpen: !this.state.isModalOpen
         })
+    }
+
+    handleSubmit(values){
+        console.log('The current state is: ' + JSON.stringify(values))
+        alert('The current state is: ' + JSON.stringify(values))
     }
 
     render(){
@@ -49,11 +60,11 @@ class Prescription extends Component{
                     Upload your Prescription
                 </Button>
                 <Modal isOpen={this.state.isModalOpen}>
-                    <ModalHeader toggle={this.toggleModal}>
-                        <h3>Upload your prescription</h3>
+                    <ModalHeader toggle={this.toggleModal} className='modal-header'>
+                        <h4 className='text-white'>Upload your prescription</h4>
                     </ModalHeader>
                     <ModalBody>
-                        <LocalForm>
+                        <LocalForm onSubmit={values => this.handleSubmit(values)}>
                             <Row className='form-group'>
                                 <Label htmlFor='firstName' md={3}>First name:</Label>
                                 <Col>
@@ -148,12 +159,17 @@ class Prescription extends Component{
                             <Row className='form-group'>
                                 <Label htmlFor='upload' md={3}>Upload:</Label>
                                 <Col>
-                                    <Control
-                                        type='file'
+                                    <Control.file
                                         model='.upload'
                                         name='upload'
                                         id='upload'  
                                     />
+                                </Col>
+                            </Row>
+                            <Row className='form-group'>
+                                <Col>
+                                    <Button type='submit' color='primary'>Submit</Button>
+                                    <Button className='ml-2' color='light' type='reset'>Start over</Button>
                                 </Col>
                             </Row>
                         </LocalForm>

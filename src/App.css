@@ -13,13 +13,13 @@
   color: #3297a8 !important;
 }
 
+h2, h3, h4, h5, h6{
+  font-family: 'Lobster' , cursive;
+}
+
 .jumbotron a:hover {
   color: white !important;
   text-decoration: none;
-}
-
-h4 {
-  font-family: 'Lobster' , cursive;
 }
 
 footer {
@@ -65,10 +65,25 @@ footer ul li:last-child{
   border-right: none;
 }
 
-.card .card-header {
-  background-color: #6DCF87;
-}
-
 .uploadPrescription {
   background-color: rgba(109, 207, 135, 0.5);
 }
+
+.modal-header {
+  background-color: #6DCF87
+}
+
+.productBtn {
+  border-radius: 40px !important;
+}
+
+.productCard {
+  border-radius: 10px;
+}
+
+.productCard:hover {
+  transform: scale(1.1);
+  transition: transform .3s ease-in-out;
+  border-style: 'solid'
+}
+
