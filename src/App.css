@@ -70,7 +70,7 @@ footer ul li:last-child{
 }
 
 .modal-header {
-  background-color: #6DCF87
+  background-color: #6DCF87;
 }
 
 .productBtn {
@@ -87,3 +87,6 @@ footer ul li:last-child{
   border-style: 'solid'
 }
 
+.card-header {
+  background-color: #6DCF87 !important;
+}

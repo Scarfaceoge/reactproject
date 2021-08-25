@@ -371,7 +371,7 @@ export function ProductItem(props) {
         if (props.essentialOil){
             return <EssentialOilsInfo essentialOil={props.essentialOil} />
         }
-        if (props.medicalDevices) {
+        if (props.medicalDevice) {
             return <MedicalDevicesInfo medicalDevice={props.medicalDevice} />
         }
         if (props.painKiller){

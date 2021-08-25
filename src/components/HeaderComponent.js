@@ -2,7 +2,14 @@ import React, {Component} from 'react';
 import { Jumbotron , Navbar , Nav , NavbarBrand , NavbarToggler , Collapse , NavItem , Button } from 'reactstrap';
 import {NavLink , Link} from 'react-router-dom';
 import { IMAGES } from '../shared/images';
+import {connect} from 'react-redux';
 
+
+const mapStateToProps = state => {
+    return{
+        cart: state.cart
+    }
+}
 
 class Header extends Component {
     constructor(props){
@@ -65,7 +72,7 @@ class Header extends Component {
                             </Nav>
                         </Collapse>
                         <ul className='mr-auto' id='members'>
-                            <li className='member'><Link to='/cart'><Button color='danger' className='btn-sm'><i className='fa fa-shopping-cart fa-sm'>{' '}Cart</i></Button></Link></li>
+                            <li className='member'><Link to='/cart'><Button color='danger' className='btn-sm'><i className='fa fa-shopping-cart fa-sm'>{' '}Cart {' '}{this.props.cart.length}</i></Button></Link></li>
                             <li className='member'><Link className='text-link' to='/signup'>Sign up</Link></li>
                             <li className='member'><Link className='text-link'>Login</Link></li>
                         </ul>
@@ -76,4 +83,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default connect(mapStateToProps)(Header);
