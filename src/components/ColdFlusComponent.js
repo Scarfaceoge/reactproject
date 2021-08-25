@@ -9,43 +9,43 @@ const mapStateToProps = state => {
     }
 }
 
-const RenderAntiMalarials = ({ product }) => {
+const RenderColdFlus = ({ product }) => {
    
-    const antiMalarials = product.map(antiMalarial => {
+    const coldFlus = product.map(coldFlu => {
         return (
             <div className='m-3'>
-                <Link to={`/antiMalarials/${antiMalarial.productId}`}>
+                <Link to={`/babyProducts/${coldFlu.productId}`}>
                     <Card className='productCard'>
-                        <img src={antiMalarial.src} alt={antiMalarial.brandName} width='300' height='300' />
+                        <img src={coldFlu.src} alt={coldFlu.brandName} width='300' height='300' />
                     </Card>
                 </Link>
                 <div className='d-flex justify-content-center text-center'>
-                    <h4>{antiMalarial.brandName} <br /> &#8358;{antiMalarial.price}</h4>
+                    <h4>{coldFlu.brandName} <br /> &#8358;{coldFlu.price}</h4>
                 </div>
             </div >
         )
     })
 
     return (
-        antiMalarials
+        coldFlus
     )
 }
 
-class AntiMalarials extends Component {
+class ColdFlus extends Component {
     render() {
         console.log(this.props.products);
         return (
             <div className='container'>
                 <div className='row offset-2 mt-3'>
-                    <h2>Anti-malarials</h2>
+                    <h2>Cold &amp; Flu</h2>
                 </div>
                 <hr className='offset-1'></hr>
                 <div className='row offset-1'>
-                    <RenderAntiMalarials product={this.props.products.antiMalarials} />
+                    <RenderColdFlus product={this.props.products.coldFlus} />
                 </div>
             </div>
         )
     }
 }
 
-export default withRouter(connect(mapStateToProps)(AntiMalarials));
+export default withRouter(connect(mapStateToProps)(ColdFlus));
