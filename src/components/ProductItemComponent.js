@@ -19,10 +19,17 @@ const mapDispatchToProps = {
 }
 
 
-
 const AntacidsInfo = ({antacid}) => {
+
     console.log(antacid)
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${antacid.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
@@ -40,7 +47,7 @@ const AntacidsInfo = ({antacid}) => {
                     <br />
                     <h3><strong> &#8358;{antacid.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(antacid))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(antacid)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
@@ -51,8 +58,16 @@ const AntacidsInfo = ({antacid}) => {
 }
 
 const AntiMalarialsInfo = ({antiMalarial}) => {
+
     console.log(antiMalarial)
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${antiMalarial.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
@@ -70,7 +85,7 @@ const AntiMalarialsInfo = ({antiMalarial}) => {
                     <br />
                     <h3><strong> &#8358;{antiMalarial.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(antiMalarial))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(antiMalarial)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
@@ -81,8 +96,16 @@ const AntiMalarialsInfo = ({antiMalarial}) => {
 }
 
 const BabyProductsInfo = ({babyProduct}) => {
+
     console.log(babyProduct)
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${babyProduct.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
@@ -100,7 +123,7 @@ const BabyProductsInfo = ({babyProduct}) => {
                     <br />
                     <h3><strong> &#8358;{babyProduct.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(babyProduct))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(babyProduct)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
@@ -111,8 +134,16 @@ const BabyProductsInfo = ({babyProduct}) => {
 }
 
 const ColdFlusInfo = ({coldFlu}) => {
+
     console.log(coldFlu)
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${coldFlu.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
@@ -130,7 +161,7 @@ const ColdFlusInfo = ({coldFlu}) => {
                     <br />
                     <h3><strong> &#8358;{coldFlu.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(coldFlu))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(coldFlu)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
@@ -141,8 +172,16 @@ const ColdFlusInfo = ({coldFlu}) => {
 }
 
 const CreamsInfo = ({cream}) => {
+
     console.log(cream)
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${cream.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
@@ -160,7 +199,7 @@ const CreamsInfo = ({cream}) => {
                     <br />
                     <h3><strong> &#8358;{cream.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(cream))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(cream)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
@@ -171,8 +210,16 @@ const CreamsInfo = ({cream}) => {
 }
 
 const EssentialOilsInfo = ({essentialOil}) => {
-    console.log(essentialOil)
+
+    console.log(essentialOil);
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${essentialOil.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
@@ -190,7 +237,7 @@ const EssentialOilsInfo = ({essentialOil}) => {
                     <br />
                     <h3><strong> &#8358;{essentialOil.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(essentialOil))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(essentialOil)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
@@ -201,8 +248,16 @@ const EssentialOilsInfo = ({essentialOil}) => {
 }
 
 const MedicalDevicesInfo = ({medicalDevice}) => {
+
     console.log(medicalDevice)
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${medicalDevice.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
@@ -220,7 +275,7 @@ const MedicalDevicesInfo = ({medicalDevice}) => {
                     <br />
                     <h3><strong> &#8358;{medicalDevice.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(medicalDevice))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(medicalDevice)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
@@ -231,8 +286,16 @@ const MedicalDevicesInfo = ({medicalDevice}) => {
 }
 
 const PainKillersInfo = ({painKiller}) => {
-    console.log(painKiller)
+
+    console.log(painKiller);
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${painKiller.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
@@ -250,7 +313,7 @@ const PainKillersInfo = ({painKiller}) => {
                     <br />
                     <h3><strong> &#8358;{painKiller.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(painKiller))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(painKiller)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
@@ -260,27 +323,35 @@ const PainKillersInfo = ({painKiller}) => {
     )
 }
 
-const PPEsInfo = ({ppes}) => {
-    console.log(ppes)
+const PPEsInfo = ({ppe}) => {
+
+    console.log(ppe);
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${ppe.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
                 <div className='col-md-6'>
                     <Card>
-                        <CardImg src={ppes.src} />
+                        <CardImg src={ppe.src} />
                     </Card>
                 </div>
                 <div className='col-md-5'>
-                    <Button outline color='secondary' className='productBtn' size='sm'>{ppes.category}</Button>
+                    <Button outline color='secondary' className='productBtn' size='sm'>{ppe.category}</Button>
                     <br />
-                    <h3><strong>{ppes.brandName}</strong></h3>
+                    <h3><strong>{ppe.brandName}</strong></h3>
                     <br />
-                    <h4>{ppes.genericName}</h4>
+                    <h4>{ppe.genericName}</h4>
                     <br />
-                    <h3><strong> &#8358;{ppes.price}</strong></h3>
+                    <h3><strong> &#8358;{ppe.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(ppes))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(ppe)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
@@ -291,8 +362,16 @@ const PPEsInfo = ({ppes}) => {
 }
 
 const ProvisionsInfo = ({provision}) => {
-    console.log(provision)
+
+    console.log(provision);
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${provision.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
@@ -310,7 +389,7 @@ const ProvisionsInfo = ({provision}) => {
                     <br />
                     <h3><strong> &#8358;{provision.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(provision))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(provision)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
@@ -321,8 +400,16 @@ const ProvisionsInfo = ({provision}) => {
 }
 
 const SupplementsInfo = ({supplement}) => {
-    console.log(supplement)
+
+    console.log(supplement);
+
     const dispatch = useDispatch();
+
+    const handleClick = product => {
+        dispatch(addCart(product));
+        alert(`${supplement.brandName} has been added to your cart`)
+    }
+
     return (
         <>
             <div className='row m-3'>
@@ -340,7 +427,7 @@ const SupplementsInfo = ({supplement}) => {
                     <br />
                     <h3><strong> &#8358;{supplement.price}</strong></h3>
                     <br />
-                    <Button color='warning' onClick={() => dispatch(addCart(supplement))}><strong>Add to cart</strong></Button>
+                    <Button color='warning' onClick={() => handleClick(supplement)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
 
