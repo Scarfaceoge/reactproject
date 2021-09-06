@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Card , Button} from 'reactstrap';
+import {Card , Button , ButtonDropdown , DropdownToggle , DropdownItem , DropdownMenu , Label , Input , FormGroup} from 'reactstrap';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {removeCart} from '../redux/ActionCreators';
+import {addCart , removeCart} from '../redux/ActionCreators';
 import {ProductsButtons} from './ProductsComponent';
 import {Prescription} from './HomeComponent';
 
@@ -13,10 +13,67 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
+    addCart,
     removeCart
 }
 
 class Cart extends Component {
+    
+    render() {
+
+        const cartItem = () => {
+            
+            if(this.props.cart === 0) {
+                return(
+                    <div>
+                        <h4>Your cart is empty</h4>
+                    </div>
+                )
+            } else { 
+                return (
+                    this.props.cart.map(item => {
+                        return (
+                            <div className='m-3 row' style={{border:'1px ridge', borderRadius: '20px'}}>
+                                <div className='col-md-2'>
+                                    <img src={item.src} alt={item.brandName} width='150' height='150' className='productImage' />
+                                </div>
+                                <div className='col-md-3 pt-3'>
+                                    <div >
+                                        <h5>{item.brandName} <br /> &#8358;{item.price}</h5>
+                                    </div>
+                                    <p>{item.qty}</p>
+                                   
+                                </div>
+                            </div >
+                        )
+                    })
+                )
+            }
+        }
+
+        
+
+
+
+
+        return (
+            <div className='container'>
+                <div className='row offset-2 mt-3'>
+                    <h2>Cart</h2>
+                </div>
+                <hr className='offset-1'></hr>
+                
+                {cartItem()}
+               
+                <hr/>
+                <ProductsButtons />
+                <Prescription />
+            </div>
+        )
+    }
+}
+
+/* class Cart extends Component {
 
     render() {
         console.log(this.props.cart);
@@ -70,7 +127,7 @@ class Cart extends Component {
             </div>
         )
     }
-}
+} */
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cart))

@@ -50,16 +50,13 @@ const AntacidsInfo = ({antacid}) => {
                     <Button color='warning' onClick={() => handleClick(antacid)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
-
-            <hr/>
-            <ProductsButtons />
         </>
     )
 }
 
 const AntiMalarialsInfo = ({antiMalarial}) => {
 
-    console.log(antiMalarial)
+    console.log(antiMalarial);
 
     const dispatch = useDispatch();
 
@@ -88,9 +85,6 @@ const AntiMalarialsInfo = ({antiMalarial}) => {
                     <Button color='warning' onClick={() => handleClick(antiMalarial)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
-
-            <hr/>
-            <ProductsButtons />
         </>
     )
 }
@@ -126,9 +120,6 @@ const BabyProductsInfo = ({babyProduct}) => {
                     <Button color='warning' onClick={() => handleClick(babyProduct)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
-
-            <hr/>
-            <ProductsButtons />
         </>
     )
 }
@@ -163,10 +154,7 @@ const ColdFlusInfo = ({coldFlu}) => {
                     <br />
                     <Button color='warning' onClick={() => handleClick(coldFlu)}><strong>Add to cart</strong></Button>
                 </div>
-            </div>
-
-            <hr/>
-            <ProductsButtons />
+            </div>   
         </>
     )
 }
@@ -201,10 +189,7 @@ const CreamsInfo = ({cream}) => {
                     <br />
                     <Button color='warning' onClick={() => handleClick(cream)}><strong>Add to cart</strong></Button>
                 </div>
-            </div>
-
-            <hr/>
-            <ProductsButtons />
+            </div>    
         </>
     )
 }
@@ -239,10 +224,7 @@ const EssentialOilsInfo = ({essentialOil}) => {
                     <br />
                     <Button color='warning' onClick={() => handleClick(essentialOil)}><strong>Add to cart</strong></Button>
                 </div>
-            </div>
-
-            <hr/>
-            <ProductsButtons />
+            </div> 
         </>
     )
 }
@@ -278,9 +260,6 @@ const MedicalDevicesInfo = ({medicalDevice}) => {
                     <Button color='warning' onClick={() => handleClick(medicalDevice)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
-
-            <hr/>
-            <ProductsButtons />
         </>
     )
 }
@@ -316,9 +295,6 @@ const PainKillersInfo = ({painKiller}) => {
                     <Button color='warning' onClick={() => handleClick(painKiller)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
-
-            <hr/>
-            <ProductsButtons />
         </>
     )
 }
@@ -354,9 +330,6 @@ const PPEsInfo = ({ppe}) => {
                     <Button color='warning' onClick={() => handleClick(ppe)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
-
-            <hr/>
-            <ProductsButtons />
         </>
     )
 }
@@ -391,10 +364,7 @@ const ProvisionsInfo = ({provision}) => {
                     <br />
                     <Button color='warning' onClick={() => handleClick(provision)}><strong>Add to cart</strong></Button>
                 </div>
-            </div>
-
-            <hr/>
-            <ProductsButtons />
+            </div>    
         </>
     )
 }
@@ -430,9 +400,6 @@ const SupplementsInfo = ({supplement}) => {
                     <Button color='warning' onClick={() => handleClick(supplement)}><strong>Add to cart</strong></Button>
                 </div>
             </div>
-
-            <hr/>
-            <ProductsButtons />
         </>
     )
 }
@@ -477,7 +444,12 @@ export function ProductItem(props) {
     }
     return(
         <div className='container'>
-            {renderItem()}
+            <div className='row offset-1'>
+                {renderItem()}
+            </div>
+            <hr/>
+            <ProductsButtons />
+            
         </div>
     )
 }

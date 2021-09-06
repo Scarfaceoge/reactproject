@@ -28,7 +28,7 @@ export function ProductsButtons() {
             </div>
             <div className='row d-flex justify-content-center m-3'>
                 <Button className='mx-2 col-md-2' color='info'><Link className='text-link text-white' to='/ppes'>PPEs</Link></Button>
-                <Button className='mx-2 col-md-2' color='info'><Link className='text-link text-white' to='babyProducts'>Baby Products</Link></Button>
+                <Button className='mx-2 col-md-2' color='info'><Link className='text-link text-white' to='/babyProducts'>Baby Products</Link></Button>
                 <Button className='mx-2 col-md-2' color='info'><Link className='text-link text-white' to='/creams'>Creams</Link></Button>
                 <Button className='mx-2 col-md-2' color='info'><Link className='text-link text-white' to='/essentialOils'>Essentials Oils</Link></Button>
                 <Button className='mx-2 col-md-2' color='info'><Link className='text-link text-white' to='/painKillers'>Pain killers</Link></Button> 
