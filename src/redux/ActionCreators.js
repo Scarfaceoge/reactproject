@@ -9,3 +9,8 @@ export const removeCart = productId =>({
     type: ActionTypes.REMOVE_CART,
     payload: productId
 })
+
+export const adjustQty = productId => ({ 
+    type: ActionTypes.ADJUST_QTY,
+    payload: productId
+})

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Card , Button , ButtonDropdown , DropdownToggle , DropdownItem , DropdownMenu , Label , Input , FormGroup} from 'reactstrap';
+import {Card} from 'reactstrap';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {addCart , removeCart} from '../redux/ActionCreators';
+import {addCart , removeCart, adjustQty} from '../redux/ActionCreators';
 import {ProductsButtons} from './ProductsComponent';
 import {Prescription} from './HomeComponent';
 
@@ -14,7 +14,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     addCart,
-    removeCart
+    removeCart,
+    adjustQty
 }
 
 class Cart extends Component {
@@ -23,7 +24,7 @@ class Cart extends Component {
 
         const cartItem = () => {
             
-            if(this.props.cart === 0) {
+            if(this.props.cart.length === 0) {
                 return(
                     <div>
                         <h4>Your cart is empty</h4>
@@ -31,39 +32,51 @@ class Cart extends Component {
                 )
             } else { 
                 return (
+                    
                     this.props.cart.map(item => {
+                        const price = item.price*item.qty;
                         return (
-                            <div className='m-3 row' style={{border:'1px ridge', borderRadius: '20px'}}>
-                                <div className='col-md-2'>
-                                    <img src={item.src} alt={item.brandName} width='150' height='150' className='productImage' />
+
+                            <div className='row' style={{ border: '1px ridge', borderRadius: '5px' }}>
+                                <div className='col-md-3'>
+                                    <img src={item.src} alt={item.brandName} width='100' height='100' className='productImage' />
                                 </div>
-                                <div className='col-md-3 pt-3'>
+                                <div className='col-md-7 py-2'>
                                     <div >
-                                        <h5>{item.brandName} <br /> &#8358;{item.price}</h5>
+                                        <h5>{item.brandName} <br /> &#8358;{price}</h5>
                                     </div>
-                                    <p>{item.qty}</p>
-                                   
+                                    <div className='input-group'>
+                                        <span><button className='btn btn-primary btn-sm' onClick={() => this.props.adjustQty(item.productId)}>-</button></span>
+                                        <input type='number' value={item.qty} style={{ width: 40 }} />
+                                        <span><button className='btn btn-primary btn-sm' onClick={() => this.props.addCart(item)}>+</button></span>
+                                    </div>
                                 </div>
-                            </div >
+                                <div className='col-md-2 d-flex align-items-end'>
+                                    <button onClick={() => this.props.removeCart(item.productId)} className='btn btn-clear btn-sm'><i>remove</i></button>
+                                </div>
+                            </div>
                         )
                     })
                 )
             }
         }
 
-        
-
-
-
-
         return (
             <div className='container'>
                 <div className='row offset-2 mt-3'>
-                    <h2>Cart</h2>
+                    <h2 className='col'>Cart</h2>
+                    
                 </div>
                 <hr className='offset-1'></hr>
+                <div className='row'>
+                    <div className='col'>
+                        {cartItem()}
+                    </div>
+                    <div className='col'>
+                    
+                    </div>
+                </div>
                 
-                {cartItem()}
                
                 <hr/>
                 <ProductsButtons />

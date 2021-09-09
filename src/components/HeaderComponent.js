@@ -72,7 +72,7 @@ class Header extends Component {
                             </Nav>
                         </Collapse>
                         <ul className='mr-auto' id='members'>
-                            <li className='member'><Link to='/cart'><Button color='danger' className='btn-sm'><i className='fa fa-shopping-cart fa-sm'>{' '}Cart {' '}{this.props.cart.length === 0 ? null : this.props.cart.length}</i></Button></Link></li>
+                            <li className='member'><Link to='/cart'><Button color='danger' className='btn-sm'><i className='fa fa-shopping-cart fa-sm'>{' '}Cart {' '}{this.props.cart.length === 0 ? null : this.props.cart.map(prod => prod.qty).reduce((a , c) => a + c)}</i></Button></Link></li>
                             <li className='member'><Link className='text-link' to='/signup'>Sign up</Link></li>
                             <li className='member'><Link className='text-link'>Login</Link></li>
                         </ul>
